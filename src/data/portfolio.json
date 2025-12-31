@@ -1,0 +1,301 @@
+{
+  "personal": {
+    "name": "Dixith S Naik",
+    "initials": "DN",
+    "title": "Full Stack Developer",
+    "tagline": "Crafting polished digital experiences.",
+    "description": "Full Stack Developer specializing in React, performance optimization, and building pixel-perfect, accessible user interfaces for modern web applications.",
+    "availability": "Available for Hire",
+    "location": "Bangalore, India",
+    "email": "dixithsnaik@gmail.com",
+    "phone": "+91 8431188261"
+  },
+  "social": {
+    "github": "https://github.com/dixithsnaik",
+    "linkedin": "https://linkedin.com/in/dixithsnaik",
+    "twitter": ""
+  },
+  "hero": {
+    "badge": "Available for Hire",
+    "headline": {
+      "line1": "Crafting polished",
+      "line2": "digital experiences."
+    },
+    "description": "Aspiring Programmer with hands-on experience in web/mobile development and UI/UX. Passionate about building fast, user-friendly apps and solving real-world problems through code.",
+    "cta": {
+      "primary": {
+        "text": "View Work",
+        "link": "/work"
+      },
+      "secondary": {
+        "text": "Contact Me",
+        "link": "/contact"
+      }
+    }
+  },
+  "projects": {
+    "title": "Selected Work",
+    "subtitle": "A collection of projects showcasing my expertise in web and mobile development.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Personalized Learning System - VEDHA Hackathon",
+        "description": "Built an AI-powered learning platform for dynamic test creation, auto-grading, and personalized learning. Secured 3rd place at VEDHA Hackathon conducted by VVCE IEEE CIS and Dept. of CSE (AI&ML).",
+        "technologies": ["React", "Flask", "Gemini API", "Llama 3.2", "Figma"],
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+        "link": "#",
+        "github": "#",
+        "featured": true,
+        "category": "AI/ML"
+      },
+      {
+        "id": 2,
+        "title": "MediBuddy - Order Medicine Page",
+        "description": "Migrated Angular modules to Next.js, improved accessibility score from 60 to 90+, optimized Core Web Vitals (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s), and added XML sitemap resulting in 60% increase in clicks.",
+        "technologies": ["Next.js", "React", "Nx Monorepo", "Accessibility"],
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
+        "link": "https://medibuddy.in",
+        "github": "#",
+        "featured": true,
+        "category": "Web App"
+      },
+      {
+        "id": 3,
+        "title": "MediBuddy - Vision Care Feature",
+        "description": "Developed Vision Care feature with 13 Snowplow analytics events and fully responsive UI, contributing to the Nx Monorepo architecture.",
+        "technologies": ["Next.js", "React", "Snowplow Analytics"],
+        "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=600&fit=crop",
+        "link": "https://medibuddy.in",
+        "github": "#",
+        "featured": false,
+        "category": "Web App"
+      },
+      {
+        "id": 4,
+        "title": "Supernest.ai Finance Module",
+        "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration. App is live on Play Store with 50+ downloads and 5.0 rating.",
+        "technologies": ["Flutter", "Provider", "REST API"],
+        "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+        "link": "https://supernest.ai",
+        "github": "#",
+        "featured": true,
+        "category": "Mobile App"
+      },
+      {
+        "id": 5,
+        "title": "Blox - In-App Messaging",
+        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. App is live on Play Store with 100+ downloads and 4.3 rating.",
+        "technologies": ["Flutter", "Firebase", "Real-time Chat"],
+        "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
+        "link": "#",
+        "github": "#",
+        "featured": false,
+        "category": "Mobile App"
+      },
+      {
+        "id": 6,
+        "title": "Blox - Notifications Module",
+        "description": "Developed full notifications module in Flutter to display user alerts with smooth state handling and visual consistency.",
+        "technologies": ["Flutter", "State Management", "UI/UX"],
+        "image": "https://images.unsplash.com/photo-1611162616305-c69b3c7bcfae?w=800&h=600&fit=crop",
+        "link": "#",
+        "github": "#",
+        "featured": false,
+        "category": "Mobile App"
+      }
+    ]
+  },
+  "techStack": {
+    "title": "Technologies & Tools",
+    "subtitle": "The tools and technologies I use to bring ideas to life",
+    "items": [
+      {
+        "name": "React",
+        "icon": "Code2",
+        "color": "text-cyan-400"
+      },
+      {
+        "name": "Next.js",
+        "icon": "Globe",
+        "color": "text-white"
+      },
+      {
+        "name": "Flutter",
+        "icon": "Sparkles",
+        "color": "text-blue-400"
+      },
+      {
+        "name": "Python",
+        "icon": "Code",
+        "color": "text-yellow-400"
+      },
+      {
+        "name": "Flask",
+        "icon": "Cpu",
+        "color": "text-green-500"
+      },
+      {
+        "name": "Firebase",
+        "icon": "Zap",
+        "color": "text-orange-500"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "Palette",
+        "color": "text-cyan-400"
+      },
+      {
+        "name": "Figma",
+        "icon": "ImageIcon",
+        "color": "text-purple-400"
+      },
+      {
+        "name": "Git",
+        "icon": "GitBranch",
+        "color": "text-orange-500"
+      },
+      {
+        "name": "AWS",
+        "icon": "Box",
+        "color": "text-blue-400"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey and the milestones along the way",
+    "items": [
+      {
+        "year": "Jan 2025 – Jul 2025",
+        "role": "Software Development Engineer Intern",
+        "company": "MediBuddy (medibuddy.in)",
+        "location": "Bangalore, KA",
+        "description": "Migrated key Angular modules to modern Next.js stack, improving accessibility score from 60 to 90+. Enhanced order medicine homepage performance (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s) achieving PageSpeed score of 90+. Added XML sitemap resulting in 60% increase in clicks. Developed Vision Care feature with 13 Snowplow analytics events. Contributed to Nx Monorepo architecture."
+      },
+      {
+        "year": "Dec 2024 – Jan 2025",
+        "role": "Software Development Engineer Intern",
+        "company": "Supernest.ai (supernest.ai)",
+        "location": "Remote",
+        "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration with modular code. App is live on Play Store with 50+ downloads, perfect 5.0 rating, published under Supernest.ai."
+      },
+      {
+        "year": "Sep 2024 – Nov 2024",
+        "role": "Jr. Flutter Developer",
+        "company": "Schaffen Softwares Pvt. Ltd (Blox App)",
+        "location": "Remote",
+        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. Developed full notifications module in Flutter with smooth state handling. App is live on Play Store with 100+ downloads, 4.3 rating, published under Blox Technologies Pvt. Ltd."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Aspiring Programmer with hands-on experience in web/mobile development and UI/UX. Passionate about building fast, user-friendly apps and solving real-world problems through code.",
+    "stats": [
+      {
+        "label": "Internships",
+        "value": "3"
+      },
+      {
+        "label": "Projects",
+        "value": "10+"
+      },
+      {
+        "label": "Apps Published",
+        "value": "2"
+      },
+      {
+        "label": "Technologies",
+        "value": "15+"
+      }
+    ],
+    "skills": [
+      {
+        "title": "Full Stack Development",
+        "description": "Expert in React, Next.js, Flutter, and Flask. Building scalable web and mobile applications with modern frameworks.",
+        "icon": "Code"
+      },
+      {
+        "title": "UI/UX Design",
+        "description": "Creating beautiful, intuitive interfaces with Figma and Adobe XD. Focus on accessibility and user experience.",
+        "icon": "Palette"
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Optimizing applications for speed, improving Core Web Vitals (LCP, FCP), and achieving 90+ PageSpeed scores.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Mobile Development",
+        "description": "Building cross-platform mobile apps with Flutter, implementing real-time features with Firebase, and publishing to app stores.",
+        "icon": "Users"
+      }
+    ],
+    "story": [
+      "I'm an aspiring programmer passionate about building fast, user-friendly applications. My journey in software development has been driven by a love for solving real-world problems through code.",
+      "I've gained hands-on experience through internships at MediBuddy, Supernest.ai, and Schaffen Softwares, where I've worked on both web and mobile applications. At MediBuddy, I migrated Angular modules to Next.js, improved accessibility scores, and optimized Core Web Vitals significantly.",
+      "I've also built and published mobile apps on the Play Store, including a finance module for Supernest.ai and messaging features for Blox. My hackathon project, an AI-powered Personalized Learning System, secured 3rd place at VEDHA Hackathon.",
+      "Currently pursuing B.E. in Computer Science and Business Systems at JSS Science and Technology University, I'm always eager to learn new technologies and take on challenging projects."
+    ],
+    "education": {
+      "degree": "B.E. in Computer Science and Business Systems",
+      "institution": "JSS Science and Technology University",
+      "location": "Mysuru, KA",
+      "dates": "Aug 2021 – Jul 2025",
+      "cgpa": "7.52"
+    },
+    "achievements": [
+      "UI/UX Design Lead at CSI Club (Aug 2024 – Present)",
+      "3rd Place at VEDHA Hackathon - Personalized Learning System (Nov 2024)",
+      "Conducted Skill-Building Workshop at JNV Hassan (Jan 2024)",
+      "Football Captain at Navodaya Regional Games (2018)"
+    ]
+  },
+  "contact": {
+    "title": "Let's work together.",
+    "subtitle": "Have a project in mind? Drop me a line.",
+    "info": [
+      {
+        "label": "Email",
+        "value": "dixithsnaik@gmail.com",
+        "link": "mailto:dixithsnaik@gmail.com",
+        "icon": "Mail"
+      },
+      {
+        "label": "Phone",
+        "value": "+91 8431188261",
+        "link": "tel:+918431188261",
+        "icon": "Phone"
+      },
+      {
+        "label": "Location",
+        "value": "Bangalore, India",
+        "link": "#",
+        "icon": "MapPin"
+      }
+    ]
+  },
+  "footer": {
+    "description": "Aspiring Programmer passionate about building fast, user-friendly apps and solving real-world problems through code.",
+    "copyright": "© 2025 Dixith S Naik. All rights reserved. Designed with precision."
+  },
+  "navigation": [
+    {
+      "path": "/",
+      "label": "Home"
+    },
+    {
+      "path": "/work",
+      "label": "Work"
+    },
+    {
+      "path": "/about",
+      "label": "About"
+    },
+    {
+      "path": "/contact",
+      "label": "Contact"
+    }
+  ]
+}
+

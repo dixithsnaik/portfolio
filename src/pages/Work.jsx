@@ -91,7 +91,7 @@ const Work = () => {
 
                 {/* Links */}
                 <div className="flex items-center gap-4">
-                  <a
+                 {project?.link && <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -99,16 +99,16 @@ const Work = () => {
                   >
                     <ExternalLink size={14} />
                     <span>View</span>
-                  </a>
-                  <a
-                    href={project.github}
+                  </a>}
+                  {project?.github && <a
+                    href={project?.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium"
                   >
                     <Github size={14} />
                     <span>Code</span>
-                  </a>
+                  </a>}
                 </div>
               </div>
             </motion.div>

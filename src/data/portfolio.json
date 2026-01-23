@@ -8,12 +8,13 @@
     "availability": "Available for Hire",
     "location": "Bangalore, India",
     "email": "dixithsnaik@gmail.com",
-    "phone": "+91 8431188261"
+    "phone": "+91 8431188261",
+    "resumeLink": "/files/Dixith_S_Naik_CV.pdf"
   },
   "social": {
     "github": "https://github.com/dixithsnaik",
     "linkedin": "https://linkedin.com/in/dixithsnaik",
-    "twitter": ""
+    "twitter": "https://x.com/NaikDixith"
   },
   "hero": {
     "badge": "Available for Hire",
@@ -42,64 +43,27 @@
         "title": "Personalized Learning System - VEDHA Hackathon",
         "description": "Built an AI-powered learning platform for dynamic test creation, auto-grading, and personalized learning. Secured 3rd place at VEDHA Hackathon conducted by VVCE IEEE CIS and Dept. of CSE (AI&ML).",
         "technologies": ["React", "Flask", "Gemini API", "Llama 3.2", "Figma"],
-        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-        "link": "#",
-        "github": "#",
+        "image": "/images/PLS-vedha.png",
         "featured": true,
         "category": "AI/ML"
       },
       {
         "id": 2,
-        "title": "MediBuddy - Order Medicine Page",
-        "description": "Migrated Angular modules to Next.js, improved accessibility score from 60 to 90+, optimized Core Web Vitals (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s), and added XML sitemap resulting in 60% increase in clicks.",
-        "technologies": ["Next.js", "React", "Nx Monorepo", "Accessibility"],
-        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop",
-        "link": "https://medibuddy.in",
-        "github": "#",
-        "featured": true,
-        "category": "Web App"
-      },
-      {
-        "id": 3,
-        "title": "MediBuddy - Vision Care Feature",
-        "description": "Developed Vision Care feature with 13 Snowplow analytics events and fully responsive UI, contributing to the Nx Monorepo architecture.",
-        "technologies": ["Next.js", "React", "Snowplow Analytics"],
-        "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&h=600&fit=crop",
-        "link": "https://medibuddy.in",
-        "github": "#",
-        "featured": false,
-        "category": "Web App"
-      },
-      {
-        "id": 4,
         "title": "Supernest.ai Finance Module",
         "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration. App is live on Play Store with 50+ downloads and 5.0 rating.",
         "technologies": ["Flutter", "Provider", "REST API"],
-        "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-        "link": "https://supernest.ai",
-        "github": "#",
+        "image": "/images/supernest.webp",
+        "link": "https://play.google.com/store/apps/details?id=com.supernest.app&pcampaignid=web_share",
         "featured": true,
         "category": "Mobile App"
       },
       {
-        "id": 5,
-        "title": "Blox - In-App Messaging",
-        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. App is live on Play Store with 100+ downloads and 4.3 rating.",
+        "id": 3,
+        "title": "Blox",
+        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. App is live on Play Store with 100+ downloads and 4.3 rating. Developed full notifications module in Flutter to display user alerts with smooth state handling and visual consistency.",
         "technologies": ["Flutter", "Firebase", "Real-time Chat"],
-        "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop",
-        "link": "#",
-        "github": "#",
-        "featured": false,
-        "category": "Mobile App"
-      },
-      {
-        "id": 6,
-        "title": "Blox - Notifications Module",
-        "description": "Developed full notifications module in Flutter to display user alerts with smooth state handling and visual consistency.",
-        "technologies": ["Flutter", "State Management", "UI/UX"],
-        "image": "https://images.unsplash.com/photo-1611162616305-c69b3c7bcfae?w=800&h=600&fit=crop",
-        "link": "#",
-        "github": "#",
+        "image": "/images/blox.webp",
+        "link": "https://play.google.com/store/apps/details?id=com.schaffen.giggle",
         "featured": false,
         "category": "Mobile App"
       }

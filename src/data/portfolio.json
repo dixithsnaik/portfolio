@@ -126,32 +126,47 @@
     ]
   },
   "experience": {
-    "title": "Experience",
-    "subtitle": "My professional journey and the milestones along the way",
-    "items": [
-      {
-        "year": "Jan 2025 – Jul 2025",
-        "role": "Software Development Engineer Intern",
-        "company": "MediBuddy (medibuddy.in)",
-        "location": "Bangalore, KA",
-        "description": "Migrated key Angular modules to modern Next.js stack, improving accessibility score from 60 to 90+. Enhanced order medicine homepage performance (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s) achieving PageSpeed score of 90+. Added XML sitemap resulting in 60% increase in clicks. Developed Vision Care feature with 13 Snowplow analytics events. Contributed to Nx Monorepo architecture."
-      },
-      {
-        "year": "Dec 2024 – Jan 2025",
-        "role": "Software Development Engineer Intern",
-        "company": "Supernest.ai (supernest.ai)",
-        "location": "Remote",
-        "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration with modular code. App is live on Play Store with 50+ downloads, perfect 5.0 rating, published under Supernest.ai."
-      },
-      {
-        "year": "Sep 2024 – Nov 2024",
-        "role": "Jr. Flutter Developer",
-        "company": "Schaffen Softwares Pvt. Ltd (Blox App)",
-        "location": "Remote",
-        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. Developed full notifications module in Flutter with smooth state handling. App is live on Play Store with 100+ downloads, 4.3 rating, published under Blox Technologies Pvt. Ltd."
-      }
-    ]
-  },
+  "title": "Experience",
+  "subtitle": "My professional journey and the milestones along the way",
+  "items": [
+    {
+      "role": "Specialist Programmer",
+      "company": "Infosys",
+      "location": "Bangalore, KA",
+      "startDate": "Oct 2025",
+      "endDate": "Present",
+      "tag": "fulltime",
+      "description": "Completed intensive training under the Specialist Programmer program, focused on full-stack development with emphasis on React.js and TypeScript. Worked on training assignments involving UI development, backend API design, and database integration. Designed responsive and accessible UI components using React and Material Design principles, following clean component patterns. Implemented backend services using Node.js and Express with structured CRUD operations and MongoDB. Used Git for version control, followed coding standards with ESLint and Prettier, and handled validations and user-facing messages."
+    },
+    {
+      "role": "Software Development Engineer Intern",
+      "company": "MediBuddy (medibuddy.in)",
+      "location": "Bangalore, KA",
+      "startDate": "Jan 2025",
+      "endDate": "Jul 2025",
+      "tag": "internship",
+      "description": "Migrated key Angular modules to modern Next.js stack, improving accessibility score from 60 to 90+. Enhanced order medicine homepage performance (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s) achieving PageSpeed score of 90+. Added XML sitemap resulting in 60% increase in clicks. Developed Vision Care feature with 13 Snowplow analytics events. Contributed to Nx Monorepo architecture."
+    },
+    {
+      "role": "Software Development Engineer Intern",
+      "company": "Supernest.ai (supernest.ai)",
+      "location": "Remote",
+      "startDate": "Dec 2024",
+      "endDate": "Jan 2025",
+      "tag": "internship",
+      "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration with modular code. App is live on Play Store with 50+ downloads, perfect 5.0 rating, published under Supernest.ai."
+    },
+    {
+      "role": "Jr. Flutter Developer",
+      "company": "Schaffen Softwares Pvt. Ltd (Blox App)",
+      "location": "Remote",
+      "startDate": "Sep 2024",
+      "endDate": "Nov 2024",
+      "tag": "internship",
+      "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. Developed full notifications module in Flutter with smooth state handling. App is live on Play Store with 100+ downloads, 4.3 rating, published under Blox Technologies Pvt. Ltd."
+    }
+  ]
+},
   "about": {
     "title": "About Me",
     "description": "Aspiring Programmer with hands-on experience in web/mobile development and UI/UX. Passionate about building fast, user-friendly apps and solving real-world problems through code.",

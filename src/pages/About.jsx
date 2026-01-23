@@ -3,12 +3,52 @@ import portfolioData from '../data/portfolio.json';
 import { getIcon } from '../utils/data';
 
 const About = () => {
-  const { about } = portfolioData;
+  const { about, projects, experience } = portfolioData;
+  const experienceItems = experience.items;
+
+  // Helper: parse "MMM YYYY" format
+  const parseDate = (str) => {
+    if (str.toLowerCase() === 'present') return new Date(); // current date
+    const [monthStr, year] = str.split(' ');
+    const month = new Date(`${monthStr} 1, ${year}`).getMonth(); // month index 0-11
+    return new Date(parseInt(year), month, 1); // first day of month
+  };
+
+  // Helper: calculate months difference
+  const calculateMonths = (start, end) =>
+    (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()) + 1;
+
+  // Calculate internship and full-time experience
+  let internshipMonths = 0;
+  let fulltimeMonths = 0;
+
+  experienceItems.forEach((exp) => {
+    const start = parseDate(exp.startDate);
+    const end = parseDate(exp.endDate);
+
+    const months = calculateMonths(start, end);
+
+    if (exp.tag === 'internship') internshipMonths += months;
+    else if (exp.tag === 'fulltime') fulltimeMonths += months;
+  });
+
+  // Prepare stats
+  const internshipText = `${internshipMonths} month${internshipMonths > 1 ? 's' : ''}`;
+  const fulltimeText = `${(fulltimeMonths / 12).toFixed(1)} yrs`;
+
+  const stats = [
+    { label: 'Internships', value: internshipText },
+    { label: 'Experience', value: fulltimeText },
+    { label: 'Projects', value: projects.items.length },
+    { label: 'Apps Published', value: projects.items.filter(p => p.link).length },
+    { label: 'Technologies', value: about.skills.length },
+  ];
+
+  // Map skills with icons
   const skills = about.skills.map((skill) => ({
     ...skill,
     icon: getIcon(skill.icon),
   }));
-  const stats = about.stats;
 
   return (
     <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -34,7 +74,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+          className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-20"
         >
           {stats.map((stat, index) => (
             <div
@@ -80,69 +120,9 @@ const About = () => {
             })}
           </div>
         </motion.div>
-
-        {/* Story */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto mb-20"
-        >
-          <h2 className="text-4xl font-black tracking-tight mb-8 text-center">My Story</h2>
-          <div className="space-y-6 text-zinc-400 leading-relaxed">
-            {about.story.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Education */}
-        {about.education && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto mb-20"
-          >
-            <h2 className="text-4xl font-black tracking-tight mb-8 text-center">Education</h2>
-            <div className="p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50">
-              <h3 className="text-2xl font-bold mb-2">{about.education.degree}</h3>
-              <p className="text-cyan-400 font-medium mb-2">{about.education.institution}</p>
-              <p className="text-zinc-400 mb-2">{about.education.location}</p>
-              <p className="text-zinc-400 mb-2">{about.education.dates}</p>
-              <p className="text-zinc-300 font-medium">CGPA: {about.education.cgpa}</p>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Achievements */}
-        {about.achievements && about.achievements.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="text-4xl font-black tracking-tight mb-8 text-center">Achievements</h2>
-            <div className="space-y-4">
-              {about.achievements.map((achievement, index) => (
-                <div
-                  key={index}
-                  className="p-4 rounded-xl bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-700 transition-colors"
-                >
-                  <p className="text-zinc-300">{achievement}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
       </div>
     </div>
   );
 };
 
 export default About;
-

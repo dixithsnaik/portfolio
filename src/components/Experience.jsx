@@ -1,96 +1,48 @@
-import { motion } from "framer-motion";
-import portfolioData from "../data/portfolio.json";
+import { motion as Motion } from 'framer-motion';
+import portfolioData from '../data/portfolio.json';
 
 const Experience = () => {
   const { experience } = portfolioData;
   const experiences = experience.items;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
-    <section id="experience" className="py-32 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="px-5 sm:px-8 lg:px-12 py-24 sm:py-32 lg:py-40 border-t border-line">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center md:text-right"
-        >
-          <h2 className="text-5xl sm:text-6xl font-black tracking-tight mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 sm:mb-28">
+          <h2 className="lg:col-span-4 font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight font-normal">
             {experience.title}
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto md:ml-auto md:mr-0">
+          <p className="lg:col-span-5 lg:col-start-8 text-muted text-lg self-end">
             {experience.subtitle}
           </p>
-        </motion.div>
-
-        <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-3 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-cyan-500 to-purple-500" />
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="space-y-12 pl-10 md:pl-0"
-          >
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="relative flex flex-col md:flex-row items-start gap-8"
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-3 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 border-4 border-zinc-950 z-10" />
-
-                {/* Content */}
-                <div
-                  className={`w-full md:w-1/2 ${
-                    index % 2 === 0
-                      ? "md:pr-12 md:text-right"
-                      : "md:ml-auto md:pl-12"
-                  }`}
-                >
-                  <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-xl p-6 backdrop-blur-sm hover:border-zinc-700 transition-colors">
-                    <span className="text-blue-400 text-sm font-semibold mb-2 block">
-                      {exp.year}
-                    </span>
-                    <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                    <p className="text-cyan-400 font-medium mb-1">
-                      {exp.company}
-                    </p>
-                    {exp.location && (
-                      <p className="text-zinc-500 text-sm mb-4">
-                        {exp.location}
-                      </p>
-                    )}
-                    <p className="text-zinc-400 leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
+
+        <ol className="divide-y divide-line border-t border-b border-line">
+          {experiences.map((exp, index) => (
+            <Motion.li
+              key={`${exp.company}-${exp.startDate}`}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.04 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 sm:py-12"
+            >
+              <p className="md:col-span-3 text-sm text-muted">
+                {exp.startDate} – {exp.endDate}
+              </p>
+              <div className="md:col-span-4">
+                <h3 className="font-display text-2xl tracking-tight mb-1">{exp.role}</h3>
+                <p className="text-sm text-muted">
+                  {exp.company}
+                  {exp.location ? ` · ${exp.location}` : ''}
+                </p>
+              </div>
+              <p className="md:col-span-5 text-[15px] leading-relaxed text-ink/90">
+                {exp.description}
+              </p>
+            </Motion.li>
+          ))}
+        </ol>
       </div>
     </section>
   );

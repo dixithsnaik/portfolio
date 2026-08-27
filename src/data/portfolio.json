@@ -2,14 +2,14 @@
   "personal": {
     "name": "Dixith S Naik",
     "initials": "DN",
-    "title": "Full Stack Developer",
-    "tagline": "Crafting polished digital experiences.",
-    "description": "Full Stack Developer specializing in React, performance optimization, and building pixel-perfect, accessible user interfaces for modern web applications.",
-    "availability": "Available for Hire",
+    "title": "Specialist Programmer",
+    "tagline": "I build Node and React systems that hold up in production.",
+    "description": "Specialist Programmer at Infosys. I split Java and Flask services into Node microservices and cut API latency 35%. Before that, Vision Care at MediBuddy.",
+    "availability": "Infosys",
     "location": "Bangalore, India",
     "email": "dixithsnaik@gmail.com",
     "phone": "+91 8431188261",
-    "resumeLink": "/files/Dixith_S_Naik_CV.pdf"
+    "resumeLink": "/files/Dixith_S_Naik_27_AUG_26.pdf"
   },
   "social": {
     "github": "https://github.com/dixithsnaik",
@@ -17,204 +17,175 @@
     "twitter": "https://x.com/NaikDixith"
   },
   "hero": {
-    "badge": "Available for Hire",
-    "headline": {
-      "line1": "Crafting polished",
-      "line2": "digital experiences."
-    },
-    "description": "Aspiring Programmer with hands-on experience in web/mobile development and UI/UX. Passionate about building fast, user-friendly apps and solving real-world problems through code.",
+    "eyebrow": "Bangalore · Specialist Programmer · Infosys",
+    "headline": "I build Node and React systems that hold up in production.",
+    "description": "At Infosys I split Java and Flask services into Node microservices and cut API latency 35%. At MediBuddy I shipped Vision Care and cut LCP 54%.",
+    "portraitCaption": "Property Vault — Aeris, 2026",
+    "image": "/images/hero.png",
     "cta": {
       "primary": {
-        "text": "View Work",
+        "text": "See the work",
         "link": "/work"
       },
       "secondary": {
-        "text": "Contact Me",
+        "text": "Email me",
         "link": "/contact"
       }
     }
   },
   "projects": {
-    "title": "Selected Work",
-    "subtitle": "A collection of projects showcasing my expertise in web and mobile development.",
+    "title": "Work",
+    "subtitle": "What I built, what it ran on, and what changed.",
     "items": [
       {
         "id": 1,
-        "title": "Personalized Learning System - VEDHA Hackathon",
-        "description": "Built an AI-powered learning platform for dynamic test creation, auto-grading, and personalized learning. Secured 3rd place at VEDHA Hackathon conducted by VVCE IEEE CIS and Dept. of CSE (AI&ML).",
-        "technologies": ["React", "Flask", "Gemini API", "Llama 3.2", "Figma"],
-        "image": "/images/PLS-vedha.png",
+        "title": "Property Vault",
+        "context": "Verified real estate transactions · Aug 2026",
+        "problem": "Buyers still needed a broker in the middle because they could not trust documents or payments on their own.",
+        "solution": "React and Flask with a MySQL property passport — ownership, tax, RERA — Razorpay for a flat verification fee, Docker for deploy.",
+        "outcome": "Buyer and seller deal directly. Documents stay stored and only surface when the checklist says they should.",
+        "description": "React and Flask real estate platform. MySQL property passport (ownership, tax, RERA), Razorpay verification payments, Docker.",
+        "technologies": ["Flask", "React", "MySQL", "Razorpay", "Docker"],
+        "image": "/images/property-vault.png",
         "featured": true,
-        "category": "AI/ML"
+        "category": "Full stack"
       },
       {
         "id": 2,
-        "title": "Supernest.ai Finance Module",
-        "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration. App is live on Play Store with 50+ downloads and 5.0 rating.",
+        "title": "Personalized Learning System",
+        "context": "VEDHA Hackathon, 2024",
+        "problem": "Students sat the same test whether they already knew the material or not.",
+        "solution": "A React front end and Flask API that writes tests, grades them, and feeds the next round from Gemini and Llama 3.2.",
+        "outcome": "3rd place at VEDHA, hosted by VVCE IEEE CIS and CSE (AI & ML).",
+        "description": "A React and Flask exam platform that writes tests, grades them, and adapts the next set with Gemini and Llama 3.2. Third at VEDHA.",
+        "technologies": ["React", "Flask", "Gemini API", "Llama 3.2", "Figma"],
+        "image": "/images/PLS-vedha.png",
+        "featured": true,
+        "category": "Hackathon"
+      },
+      {
+        "id": 3,
+        "title": "Supernest.ai Finance",
+        "context": "Internship · Dec 2024 – Jan 2025",
+        "problem": "The app needed a finance module that talked to the backend and did not feel like a settings dump.",
+        "solution": "Flutter screens with Provider, REST, and motion, shipped as a self-contained module.",
+        "outcome": "Live on the Play Store. 50+ downloads, 5.0 rating.",
+        "description": "Finance module in Flutter (Provider, REST, motion). Live on the Play Store — 50+ downloads, 5.0 rating.",
         "technologies": ["Flutter", "Provider", "REST API"],
         "image": "/images/supernest.webp",
         "link": "https://play.google.com/store/apps/details?id=com.supernest.app&pcampaignid=web_share",
         "featured": true,
-        "category": "Mobile App"
+        "category": "Mobile"
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "Blox",
-        "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. App is live on Play Store with 100+ downloads and 4.3 rating. Developed full notifications module in Flutter to display user alerts with smooth state handling and visual consistency.",
-        "technologies": ["Flutter", "Firebase", "Real-time Chat"],
+        "context": "Schaffen Softwares · Sep – Nov 2024",
+        "problem": "People using the app had no way to talk to each other inside it.",
+        "solution": "Firebase chat with reactions, replies, deletes, stickers, and images, plus a notifications module in Flutter.",
+        "outcome": "Live on the Play Store. 100+ downloads, 4.3 rating.",
+        "description": "In-app chat on Firebase — reactions, replies, stickers, images — and a notifications module in Flutter. Play Store, 100+ downloads, 4.3.",
+        "technologies": ["Flutter", "Firebase"],
         "image": "/images/blox.webp",
         "link": "https://play.google.com/store/apps/details?id=com.schaffen.giggle",
         "featured": false,
-        "category": "Mobile App"
+        "category": "Mobile"
       }
     ]
   },
   "techStack": {
-    "title": "Technologies & Tools",
-    "subtitle": "The tools and technologies I use to bring ideas to life",
+    "title": "Stack",
+    "subtitle": "What I reached for on the work above.",
     "items": [
-      {
-        "name": "React",
-        "icon": "Code2",
-        "color": "text-cyan-400"
-      },
-      {
-        "name": "Next.js",
-        "icon": "Globe",
-        "color": "text-white"
-      },
-      {
-        "name": "Flutter",
-        "icon": "Sparkles",
-        "color": "text-blue-400"
-      },
-      {
-        "name": "Python",
-        "icon": "Code",
-        "color": "text-yellow-400"
-      },
-      {
-        "name": "Flask",
-        "icon": "Cpu",
-        "color": "text-green-500"
-      },
-      {
-        "name": "Firebase",
-        "icon": "Zap",
-        "color": "text-orange-500"
-      },
-      {
-        "name": "Tailwind CSS",
-        "icon": "Palette",
-        "color": "text-cyan-400"
-      },
-      {
-        "name": "Figma",
-        "icon": "ImageIcon",
-        "color": "text-purple-400"
-      },
-      {
-        "name": "Git",
-        "icon": "GitBranch",
-        "color": "text-orange-500"
-      },
-      {
-        "name": "AWS",
-        "icon": "Box",
-        "color": "text-blue-400"
-      }
+      { "name": "React", "icon": "Code2" },
+      { "name": "Next.js", "icon": "Globe" },
+      { "name": "TypeScript", "icon": "FileCode" },
+      { "name": "Node.js", "icon": "Cpu" },
+      { "name": "Express.js", "icon": "Server" },
+      { "name": "MongoDB", "icon": "Database" },
+      { "name": "MySQL", "icon": "Database" },
+      { "name": "Redis", "icon": "Zap" },
+      { "name": "Flask", "icon": "Code" },
+      { "name": "Flutter", "icon": "Sparkles" },
+      { "name": "Firebase", "icon": "Zap" },
+      { "name": "Docker", "icon": "Box" },
+      { "name": "AWS", "icon": "Cloud" },
+      { "name": "Tailwind CSS", "icon": "Palette" },
+      { "name": "Git", "icon": "GitBranch" },
+      { "name": "Jest", "icon": "TestTube" }
     ]
   },
   "experience": {
-  "title": "Experience",
-  "subtitle": "My professional journey and the milestones along the way",
-  "items": [
-    {
-      "role": "Specialist Programmer",
-      "company": "Infosys",
-      "location": "Bangalore, KA",
-      "startDate": "Oct 2025",
-      "endDate": "Present",
-      "tag": "fulltime",
-      "description": "Completed intensive training under the Specialist Programmer program, focused on full-stack development with emphasis on React.js and TypeScript. Worked on training assignments involving UI development, backend API design, and database integration. Designed responsive and accessible UI components using React and Material Design principles, following clean component patterns. Implemented backend services using Node.js and Express with structured CRUD operations and MongoDB. Used Git for version control, followed coding standards with ESLint and Prettier, and handled validations and user-facing messages."
-    },
-    {
-      "role": "Software Development Engineer Intern",
-      "company": "MediBuddy (medibuddy.in)",
-      "location": "Bangalore, KA",
-      "startDate": "Jan 2025",
-      "endDate": "Jul 2025",
-      "tag": "internship",
-      "description": "Migrated key Angular modules to modern Next.js stack, improving accessibility score from 60 to 90+. Enhanced order medicine homepage performance (LCP: 2.8s→1.3s, FCP: 1.9s→0.6s) achieving PageSpeed score of 90+. Added XML sitemap resulting in 60% increase in clicks. Developed Vision Care feature with 13 Snowplow analytics events. Contributed to Nx Monorepo architecture."
-    },
-    {
-      "role": "Software Development Engineer Intern",
-      "company": "Supernest.ai (supernest.ai)",
-      "location": "Remote",
-      "startDate": "Dec 2024",
-      "endDate": "Jan 2025",
-      "tag": "internship",
-      "description": "Built finance module in Flutter using Provider for state management. Worked on animated UI screens and API integration with modular code. App is live on Play Store with 50+ downloads, perfect 5.0 rating, published under Supernest.ai."
-    },
-    {
-      "role": "Jr. Flutter Developer",
-      "company": "Schaffen Softwares Pvt. Ltd (Blox App)",
-      "location": "Remote",
-      "startDate": "Sep 2024",
-      "endDate": "Nov 2024",
-      "tag": "internship",
-      "description": "Built in-app messaging feature using Firebase, supporting reactions, replies, deletions, stickers, and image sharing. Developed full notifications module in Flutter with smooth state handling. App is live on Play Store with 100+ downloads, 4.3 rating, published under Blox Technologies Pvt. Ltd."
-    }
-  ]
-},
-  "about": {
-    "title": "About Me",
-    "description": "Aspiring Programmer with hands-on experience in web/mobile development and UI/UX. Passionate about building fast, user-friendly apps and solving real-world problems through code.",
-    "stats": [
+    "title": "Jobs",
+    "subtitle": "Where I was, and what I shipped.",
+    "items": [
       {
-        "label": "Internships",
-        "value": "3"
+        "role": "Specialist Programmer",
+        "company": "Infosys",
+        "location": "Bangalore, KA",
+        "startDate": "Oct 2025",
+        "endDate": "Present",
+        "tag": "fulltime",
+        "description": "Split Java and Flask services into Node and Express microservices. API latency down 35% under load. RBAC on internal data pipelines. Defects down 40% after Jest tests and Docker/Jenkins CI."
       },
       {
-        "label": "Projects",
-        "value": "10+"
+        "role": "Software Development Engineer Intern",
+        "company": "MediBuddy",
+        "location": "Bangalore, KA",
+        "startDate": "Jan 2025",
+        "endDate": "Jul 2025",
+        "tag": "internship",
+        "description": "Shipped Vision Care booking in production — React and Express, handling health data. Redis cache, 60% more throughput at peak. Angular to Next.js, accessibility 60 to 90+. LCP down 54%, FCP down 68%. Nx monorepo."
       },
       {
-        "label": "Apps Published",
-        "value": "2"
+        "role": "Software Development Engineer Intern",
+        "company": "Supernest.ai",
+        "location": "Remote",
+        "startDate": "Dec 2024",
+        "endDate": "Jan 2025",
+        "tag": "internship",
+        "description": "Finance module in Flutter — Provider, REST, motion. Play Store, 50+ downloads, 5.0 rating."
       },
       {
-        "label": "Technologies",
-        "value": "15+"
+        "role": "Jr. Flutter Developer",
+        "company": "Schaffen Softwares (Blox)",
+        "location": "Remote",
+        "startDate": "Sep 2024",
+        "endDate": "Nov 2024",
+        "tag": "internship",
+        "description": "Firebase chat: reactions, replies, deletes, stickers, images. Notifications module in Flutter. Play Store, 100+ downloads, 4.3 rating."
       }
-    ],
+    ]
+  },
+  "about": {
+    "title": "About",
+    "description": "I write Node, React, and Express for the web. Bangalore. Infosys.",
     "skills": [
       {
-        "title": "Full Stack Development",
-        "description": "Expert in React, Next.js, Flutter, and Flask. Building scalable web and mobile applications with modern frameworks.",
+        "title": "APIs and services",
+        "description": "Node, Express, Flask. I broke a Java/Flask monolith into microservices and dropped latency 35%.",
+        "icon": "Server"
+      },
+      {
+        "title": "Web",
+        "description": "React, Next.js, TypeScript. The MediBuddy Angular migration was the longest stretch.",
         "icon": "Code"
       },
       {
-        "title": "UI/UX Design",
-        "description": "Creating beautiful, intuitive interfaces with Figma and Adobe XD. Focus on accessibility and user experience.",
-        "icon": "Palette"
-      },
-      {
-        "title": "Performance Optimization",
-        "description": "Optimizing applications for speed, improving Core Web Vitals (LCP, FCP), and achieving 90+ PageSpeed scores.",
+        "title": "Speed",
+        "description": "Redis at peak hours. LCP down 54%, FCP down 68%, accessibility 60 to 90+.",
         "icon": "Zap"
       },
       {
-        "title": "Mobile Development",
-        "description": "Building cross-platform mobile apps with Flutter, implementing real-time features with Firebase, and publishing to app stores.",
-        "icon": "Users"
+        "title": "Data and auth",
+        "description": "MongoDB, MySQL, JWT, OAuth 2.0, RBAC. Health data at MediBuddy. Property documents in Vault.",
+        "icon": "Database"
       }
     ],
     "story": [
-      "I'm an aspiring programmer passionate about building fast, user-friendly applications. My journey in software development has been driven by a love for solving real-world problems through code.",
-      "I've gained hands-on experience through internships at MediBuddy, Supernest.ai, and Schaffen Softwares, where I've worked on both web and mobile applications. At MediBuddy, I migrated Angular modules to Next.js, improved accessibility scores, and optimized Core Web Vitals significantly.",
-      "I've also built and published mobile apps on the Play Store, including a finance module for Supernest.ai and messaging features for Blox. My hackathon project, an AI-powered Personalized Learning System, secured 3rd place at VEDHA Hackathon.",
-      "Currently pursuing B.E. in Computer Science and Business Systems at JSS Science and Technology University, I'm always eager to learn new technologies and take on challenging projects."
+      "I studied Computer Science and Business Systems at JSS Science and Technology University in Mysuru. I interned at MediBuddy, Supernest.ai, and Schaffen, then joined Infosys as a Specialist Programmer in October 2025.",
+      "At Infosys I split Java and Flask services into Node and Express microservices, cut API latency 35%, and put Jest and Docker/Jenkins on the path to production. Defects dropped 40% over two quarters.",
+      "At MediBuddy I shipped Vision Care — React and Express, thousands of daily users, health data. I moved Angular modules to Next.js, cached peak traffic with Redis, and cut LCP 54%."
     ],
     "education": {
       "degree": "B.E. in Computer Science and Business Systems",
@@ -224,15 +195,13 @@
       "cgpa": "7.52"
     },
     "achievements": [
-      "UI/UX Design Lead at CSI Club (Aug 2024 – Present)",
-      "3rd Place at VEDHA Hackathon - Personalized Learning System (Nov 2024)",
-      "Conducted Skill-Building Workshop at JNV Hassan (Jan 2024)",
-      "Football Captain at Navodaya Regional Games (2018)"
+      "UI/UX Design Lead, CSI Club — visual standards for the CS student body at JSSSTU.",
+      "3rd Place at VEDHA Hackathon — Personalized Learning System (Nov 2024)"
     ]
   },
   "contact": {
-    "title": "Let's work together.",
-    "subtitle": "Have a project in mind? Drop me a line.",
+    "title": "Say hello.",
+    "subtitle": "Email is fastest. I read it.",
     "info": [
       {
         "label": "Email",
@@ -255,26 +224,13 @@
     ]
   },
   "footer": {
-    "description": "Aspiring Programmer passionate about building fast, user-friendly apps and solving real-world problems through code.",
-    "copyright": "© 2025 Dixith S Naik. All rights reserved. Designed with precision."
+    "description": "Node, React, and Express. Bangalore.",
+    "copyright": "© 2026 Dixith S Naik"
   },
   "navigation": [
-    {
-      "path": "/",
-      "label": "Home"
-    },
-    {
-      "path": "/work",
-      "label": "Work"
-    },
-    {
-      "path": "/about",
-      "label": "About"
-    },
-    {
-      "path": "/contact",
-      "label": "Contact"
-    }
+    { "path": "/", "label": "Home" },
+    { "path": "/work", "label": "Work" },
+    { "path": "/about", "label": "About" },
+    { "path": "/contact", "label": "Contact" }
   ]
 }
-

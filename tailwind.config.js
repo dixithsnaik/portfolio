@@ -4,37 +4,30 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        zinc: {
-          950: '#09090b',
-        },
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        muted: 'var(--muted)',
+        line: 'var(--line)',
+        card: 'var(--card)',
+        accent: 'var(--accent)',
+        hero: 'var(--hero)',
+        'hero-fg': 'var(--hero-fg)',
+        'hero-muted': 'var(--hero-muted)',
       },
       fontFamily: {
-        geist: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
       },
-      animation: {
-        'shimmer': 'shimmer 3s ease-in-out infinite',
-        'marquee': 'marquee 30s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        shimmer: {
-          '0%, 100%': { opacity: '0.5' },
-          '50%': { opacity: '1' },
-        },
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
+      spacing: {
+        18: '4.5rem',
+        22: '5.5rem',
+        30: '7.5rem',
       },
     },
   },
   plugins: [],
 }
-

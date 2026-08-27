@@ -1,88 +1,47 @@
-import { motion } from 'framer-motion';
-import { Download, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 
 const Resume = () => {
   const { personal } = portfolioData;
-  const resumeUrl = personal.resumeLink; // "/files/Dixith_S_Naik_Resume.pdf"
+  const resumeUrl = personal.resumeLink;
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <h2 className="text-5xl sm:text-6xl font-black tracking-tight mb-4">
+    <section className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-5 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
+          <h1 className="lg:col-span-5 font-display text-5xl sm:text-6xl tracking-tight font-normal">
             Resume
-          </h2>
-          <p className="text-zinc-400 text-lg">
-            View or download my resume directly from here.
-          </p>
-        </motion.div>
-
-        {/* Resume Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap items-center gap-4 mb-6"
-        >
-          <a
-            href={resumeUrl}
-            download
-            className="inline-flex items-center gap-2 px-6 py-3
-                       bg-gradient-to-r from-blue-500 to-cyan-500
-                       text-white font-semibold rounded-lg
-                       hover:shadow-lg hover:shadow-blue-500/25
-                       transition-all"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
-
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3
-                       bg-zinc-900 border border-zinc-800
-                       rounded-lg hover:bg-zinc-800
-                       transition-colors text-zinc-300"
-          >
-            <ExternalLink size={18} />
-            Open in new tab
-          </a>
-        </motion.div>
-
-        {/* Resume Preview (UI Embedded) */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/30"
-        >
-          <div className="p-4 bg-zinc-900 border-b border-zinc-800">
-            <h3 className="font-semibold text-white">
-              Resume Preview
-            </h3>
+          </h1>
+          <div className="lg:col-span-6 lg:col-start-7 flex flex-wrap items-end gap-8">
+            <a
+              href={resumeUrl}
+              download
+              className="inline-flex items-center gap-2 text-sm font-medium bg-ink text-paper px-6 py-3.5 hover:opacity-90 transition-opacity"
+            >
+              Download
+              <Download size={16} strokeWidth={1.75} />
+            </a>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm border-b border-ink/30 pb-0.5 hover:border-ink transition-colors"
+            >
+              Open in a new tab
+              <ArrowUpRight size={14} strokeWidth={1.75} />
+            </a>
           </div>
+        </div>
 
-          {/* IMPORTANT: iframe keeps it inside UI */}
+        <div className="border border-line bg-card overflow-hidden">
           <div className="h-[80vh]">
             <iframe
               src={`${resumeUrl}#toolbar=0&navpanes=0&scrollbar=0`}
               title="Resume"
-              className="w-full h-full border-0 bg-zinc-900"
+              className="w-full h-full border-0 bg-paper"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,125 +1,101 @@
-import { motion } from 'framer-motion';
 import portfolioData from '../data/portfolio.json';
-import { getIcon } from '../utils/data';
 
 const About = () => {
   const { about, projects, experience } = portfolioData;
   const experienceItems = experience.items;
 
-  // Helper: parse "MMM YYYY" format
   const parseDate = (str) => {
-    if (str.toLowerCase() === 'present') return new Date(); // current date
+    if (str.toLowerCase() === 'present') return new Date();
     const [monthStr, year] = str.split(' ');
-    const month = new Date(`${monthStr} 1, ${year}`).getMonth(); // month index 0-11
-    return new Date(parseInt(year), month, 1); // first day of month
+    const month = new Date(`${monthStr} 1, ${year}`).getMonth();
+    return new Date(parseInt(year, 10), month, 1);
   };
 
-  // Helper: calculate months difference
   const calculateMonths = (start, end) =>
     (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()) + 1;
 
-  // Calculate internship and full-time experience
   let internshipMonths = 0;
   let fulltimeMonths = 0;
 
   experienceItems.forEach((exp) => {
     const start = parseDate(exp.startDate);
     const end = parseDate(exp.endDate);
-
     const months = calculateMonths(start, end);
 
     if (exp.tag === 'internship') internshipMonths += months;
     else if (exp.tag === 'fulltime') fulltimeMonths += months;
   });
 
-  // Prepare stats
-  const internshipText = `${internshipMonths} month${internshipMonths > 1 ? 's' : ''}`;
-  const fulltimeText = `${(fulltimeMonths / 12).toFixed(1)} yrs`;
+  const internshipText = `${internshipMonths} mo`;
+  const fulltimeText = `${(fulltimeMonths / 12).toFixed(1)} yr`;
 
   const stats = [
     { label: 'Internships', value: internshipText },
-    { label: 'Experience', value: fulltimeText },
-    { label: 'Projects', value: projects.items.length },
-    { label: 'Apps Published', value: projects.items.filter(p => p.link).length },
-    { label: 'Technologies', value: about.skills.length },
+    { label: 'Full-time', value: fulltimeText },
+    { label: 'Projects', value: String(projects.items.length) },
+    { label: 'CGPA', value: about.education.cgpa },
   ];
 
-  // Map skills with icons
-  const skills = about.skills.map((skill) => ({
-    ...skill,
-    icon: getIcon(skill.icon),
-  }));
-
   return (
-    <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 sm:pt-40 pb-24 sm:pb-32 px-5 sm:px-8 lg:px-12 bg-paper text-ink">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <h1 className="text-6xl sm:text-7xl font-black tracking-tight mb-6">
-            {about.title}
-          </h1>
-          <p className="text-xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-            {about.description}
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 sm:mb-32">
+          <div className="lg:col-span-5">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl tracking-tight font-normal mb-8">
+              {about.title}
+            </h1>
+            <p className="text-lg text-muted max-w-sm">{about.description}</p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7 space-y-6 text-[17px] leading-relaxed lg:pt-4">
+            {about.story.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-20"
-        >
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50"
-            >
-              <div className="text-4xl font-black text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-zinc-400">{stat.label}</div>
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 sm:mb-32 py-10 border-y border-line">
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="text-[11px] tracking-[0.18em] uppercase text-muted mb-2">{stat.label}</dt>
+              <dd className="font-display text-3xl sm:text-4xl tracking-tight">{stat.value}</dd>
             </div>
           ))}
-        </motion.div>
+        </dl>
 
-        {/* Skills */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <h2 className="text-4xl font-black tracking-tight mb-12 text-center">What I Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skill, index) => {
-              const Icon = skill.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-zinc-900/30 border border-zinc-800/50 hover:border-zinc-700 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/20 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{skill.title}</h3>
-                  <p className="text-zinc-400 leading-relaxed">{skill.description}</p>
-                </motion.div>
-              );
-            })}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 sm:mb-32">
+          <h2 className="lg:col-span-4 font-display text-3xl sm:text-4xl tracking-tight">What I do</h2>
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
+            {about.skills.map((skill) => (
+              <div key={skill.title}>
+                <h3 className="text-lg mb-2">{skill.title}</h3>
+                <p className="text-muted text-[15px] leading-relaxed">{skill.description}</p>
+              </div>
+            ))}
           </div>
-        </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-5">
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">School</h2>
+            <p className="text-lg mb-1">{about.education.degree}</p>
+            <p className="text-muted text-sm mb-4">
+              {about.education.institution} · {about.education.location}
+            </p>
+            <p className="text-sm text-muted">
+              {about.education.dates} · CGPA {about.education.cgpa}
+            </p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">Notes</h2>
+            <ul className="space-y-4">
+              {about.achievements.map((item) => (
+                <li key={item} className="text-[15px] leading-relaxed border-b border-line pb-4">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

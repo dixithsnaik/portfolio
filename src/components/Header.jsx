@@ -1,105 +1,104 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, FileText } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { AnimatePresence, motion as Motion } from 'framer-motion';
 import portfolioData from '../data/portfolio.json';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
   const { navigation, personal } = portfolioData;
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 12);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = navigation;
-
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50'
-          : 'bg-transparent'
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-paper text-ink ${
+        isScrolled ? 'shadow-[0_1px_0_var(--line)]' : ''
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">{personal.initials}</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">{personal.name}</span>
+      <nav className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-[5.5rem]">
+          <Link to="/" className="font-display text-xl sm:text-2xl tracking-tight">
+            {personal.name}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+          <div className="hidden md:flex items-center gap-9">
+            {navigation.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors relative ${
+                className={`text-[13px] tracking-wide transition-colors ${
                   location.pathname === link.path
-                    ? 'text-blue-400'
-                    : 'text-zinc-400 hover:text-white'
+                    ? 'text-ink'
+                    : 'text-muted hover:text-ink'
                 }`}
               >
                 {link.label}
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400"
-                  />
-                )}
               </Link>
             ))}
             <Link
               to="/resume"
-              className="flex items-center space-x-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-medium transition-colors"
+              className="text-[13px] tracking-wide text-muted hover:text-ink transition-colors"
             >
-              <FileText size={16} />
-              <span>Resume</span>
+              Resume
             </Link>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="text-muted hover:text-ink transition-colors"
+            >
+              {theme === 'dark' ? <Sun size={18} strokeWidth={1.6} /> : <Moon size={18} strokeWidth={1.6} />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-zinc-400 hover:text-white transition-colors"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex md:hidden items-center gap-4">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="text-muted hover:text-ink transition-colors"
+            >
+              {theme === 'dark' ? <Sun size={18} strokeWidth={1.6} /> : <Moon size={18} strokeWidth={1.6} />}
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-ink"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={22} strokeWidth={1.6} /> : <Menu size={22} strokeWidth={1.6} />}
+            </button>
+          </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-800/50"
+            className="md:hidden bg-paper border-t border-line overflow-hidden"
           >
-            <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link) => (
+            <div className="px-5 py-8 space-y-5">
+              {navigation.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-base font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-blue-400'
-                      : 'text-zinc-400 hover:text-white'
+                  className={`block text-base ${
+                    location.pathname === link.path ? 'text-ink' : 'text-muted'
                   }`}
                 >
                   {link.label}
@@ -108,18 +107,16 @@ const Header = () => {
               <Link
                 to="/resume"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center space-x-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg text-sm font-medium transition-colors w-fit"
+                className="block text-base text-muted"
               >
-                <FileText size={16} />
-                <span>Resume</span>
+                Resume
               </Link>
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 };
 
 export default Header;
-

@@ -1,6 +1,3 @@
-import portfolioData from '../data/portfolio.json';
-
-// Icon mapping for dynamic icon imports
 import {
   Code2,
   FileCode,
@@ -17,7 +14,12 @@ import {
   Mail,
   Phone,
   MapPin,
+  Server,
+  Database,
+  Cloud,
+  TestTube,
 } from 'lucide-react';
+import portfolioData from '../data/portfolio.json';
 
 const iconMap = {
   Code2,
@@ -35,6 +37,10 @@ const iconMap = {
   Mail,
   Phone,
   MapPin,
+  Server,
+  Database,
+  Cloud,
+  TestTube,
 };
 
 export const getIcon = (iconName) => {
@@ -42,4 +48,3 @@ export const getIcon = (iconName) => {
 };
 
 export default portfolioData;
-

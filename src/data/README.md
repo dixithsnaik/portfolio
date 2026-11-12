@@ -5,7 +5,7 @@ All copy lives in `portfolio.json`. Edit that file; the UI reads it directly.
 ## Personal
 - `name`, `initials`, `title`, `tagline`, `description`
 - `availability`, `location`, `email`, `phone`
-- `resumeLink` — path under `public/` (current: `/files/Dixith_S_Naik_12_NOV_26.pdf`)
+- `resumeLink` — path under `public/` (current: `/files/Dixith_S_Naik_13_NOV_26.pdf`)
 
 ## Social
 - `github`, `linkedin`, `twitter`
